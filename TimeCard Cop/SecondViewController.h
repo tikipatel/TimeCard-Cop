@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>{
-    NSArray *tempMemoryProjectArray;
-}
+@interface SecondViewController : UIViewController<UIPickerViewDataSource,UIPickerViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *projectCode;
 @property (weak, nonatomic) IBOutlet UITextField *taskCode;
 @property (weak, nonatomic) IBOutlet UITextField *favoriteCode;

@@ -72,7 +72,7 @@
     [userDefaults setObject:savedTaskArray forKey:@"taskArray"];
     [userDefaults setObject:savedFavoriteArray forKey:@"favoriteArray"];
     [userDefaults setObject:savedHourArray forKey:@"hourArray"];
-    [userDefaults setObject:tempMemoryProjectArray forKey:@"tempMemoryProjectArray"];
+    [userDefaults setObject:self.tempMemoryProjectArray forKey:@"tempMemoryProjectArray"];
     [userDefaults setObject:tempMemoryTaskArray forKey:@"tempMemoryTaskArray"];
     [userDefaults setObject:tempMemoryFavoriteArray forKey:@"tempMemoryFavoriteArray"];
     [userDefaults setObject:tempMemoryHourArray forKey:@"tempMemoryHourArray"];
@@ -136,12 +136,12 @@ tempMemoryProjectArray and tempMemoryTaskArray are loaded at the start of this f
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
     
-    return [tempMemoryProjectArray count];
+    return [self.tempMemoryProjectArray count];
 
 }
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
  
- return [tempMemoryProjectArray objectAtIndex:row];
+ return [self.tempMemoryProjectArray objectAtIndex:row];
  
 }
 
@@ -166,7 +166,7 @@ tempMemoryProjectArray and tempMemoryTaskArray are loaded at the start of this f
         
         // Save empty tempMemoryArray to userDefaults
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject:tempMemoryProjectArray forKey:@"tempMemoryProjectArray"];
+        [userDefaults setObject:self.tempMemoryProjectArray forKey:@"tempMemoryProjectArray"];
         [userDefaults setObject:tempMemoryTaskArray forKey:@"tempMemoryTaskArray"];
         [userDefaults setObject:tempMemoryFavoriteArray forKey:@"tempMemoryFavoriteArray"];
         [userDefaults setObject:tempMemoryHourArray forKey:@"tempMemoryHourArray"];
