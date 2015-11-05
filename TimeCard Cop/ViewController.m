@@ -19,15 +19,15 @@
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-   
+    
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSArray *savedProjectArray = [userDefaults objectForKey:@"projectArray"];
     NSArray *savedTaskArray = [userDefaults objectForKey:@"taskArray"];
     NSArray *savedFavoriteArray = [userDefaults objectForKey:@"favoriteArray"];
     NSArray *savedHourArray = [userDefaults objectForKey:@"hourArray"];
-        NSArray *tempMemoryProjectArray = [userDefaults objectForKey:@"tempMemoryProjectArray"]
-	;
-
+    NSArray *tempMemoryProjectArray = [userDefaults objectForKey:@"tempMemoryProjectArray"]
+    ;
+    
     if(_projectArray ==nil){
         _projectArray = [[NSMutableArray alloc] initWithArray:savedProjectArray];
     }
@@ -43,13 +43,13 @@
     if(_hourArray ==nil){
         _hourArray = [[NSMutableArray alloc] initWithArray:savedHourArray];
     }
-
-  if (savedProjectArray.count > 0) {
+    
+    if (savedProjectArray.count > 0) {
         self.project1.text=savedProjectArray[0];
-      self.task1.text=savedTaskArray[0];
-      self.hours1.text=savedHourArray[0];
+        self.task1.text=savedTaskArray[0];
+        self.hours1.text=savedHourArray[0];
     }
-
+    
     if (savedProjectArray.count > 1) {
         self.project2.text=savedProjectArray[1];
         self.task2.text=savedTaskArray[1];
@@ -110,11 +110,10 @@
         self.task13.text=savedTaskArray[12];
         self.hours13.text=savedHourArray[12];
     }
-    }
     
     NSLog(@"%lu",(unsigned long)savedProjectArray.count);
     NSLog(@"%lu",(unsigned long)tempMemoryProjectArray.count);
-
+    
     
 }
 
@@ -127,7 +126,7 @@
     
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Clear All Charge Codes" message:@"Are you sure you want to clear all charge codes from this screen?" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* yes = [UIAlertAction actionWithTitle:@"Yes" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * action) {
-    
+        
         [_projectArray removeAllObjects];
         [_taskArray removeAllObjects];
         [_favoriteArray removeAllObjects];
@@ -184,9 +183,9 @@
         self.project13.text=@"";
         self.task13.text=@"";
         self.hours13.text=@"";
-
-
-    
+        
+        
+        
     }];
     UIAlertAction* no = [UIAlertAction actionWithTitle:@"No" style:UIAlertActionStyleDefault handler:nil];
     

@@ -14,16 +14,6 @@
 
 
 @implementation SecondViewController
-@synthesize projectArray = _projectArray;
-@synthesize taskArray = _taskArray;
-@synthesize favoriteArray = _favoriteArray;
-@synthesize hourArray = _hourArray;
-@synthesize hourLabel=_hourLabel;
-@synthesize projectCode=_projectCode;
-@synthesize taskCode = _taskCode;
-@synthesize favoriteCode = _favoriteCode;
-
-
 
 //Getter
 
@@ -71,7 +61,7 @@
     NSArray *savedTaskArray = [[NSArray alloc] initWithArray:_taskArray];
     NSArray *savedFavoriteArray = [[NSArray alloc] initWithArray:_favoriteArray];
     NSArray *savedHourArray = [[NSArray alloc] initWithArray:_hourArray];
-    NSArray *tempMemoryProjectArray = [[NSArray alloc] initWithArray:_projectArray];
+    self.tempMemoryProjectArray = [[NSArray alloc] initWithArray:_projectArray];
     NSArray *tempMemoryTaskArray = [[NSArray alloc] initWithArray:_taskArray];
     NSArray *tempMemoryFavoriteArray = [[NSArray alloc] initWithArray:_favoriteArray];
     NSArray *tempMemoryHourArray = [[NSArray alloc] initWithArray:_hourArray];   
@@ -106,10 +96,10 @@
     NSArray *savedTaskArray = [userDefaults objectForKey:@"taskArray"];
     NSArray *savedFavoriteArray = [userDefaults objectForKey:@"favoriteArray"];
     NSArray *savedHourArray = [userDefaults objectForKey:@"hourArray"];
-    NSArray *tempMemoryProjectArray = [userDefaults objectForKey:@"tempMemoryProjectArray"];
-    NSArray *tempMemoryTaskArray = [userDefaults objectForKey:@"tempMemoryTaskArray"];
-    NSArray *tempMemoryFavoriteArray = [userDefaults objectForKey:@"tempMemoryFavoriteArray"];
-    NSArray *tempMemoryHourArray = [userDefaults objectForKey:@"tempMemoryHourArray"];
+    self.tempMemoryProjectArray = [userDefaults objectForKey:@"tempMemoryProjectArray"];
+    self.tempMemoryTaskArray = [userDefaults objectForKey:@"tempMemoryTaskArray"];
+    self.tempMemoryFavoriteArray = [userDefaults objectForKey:@"tempMemoryFavoriteArray"];
+    self.tempMemoryHourArray = [userDefaults objectForKey:@"tempMemoryHourArray"];
     //Fill project Array with the data of the savedArray
     if(_projectArray ==nil){
         _projectArray = [[NSMutableArray alloc] initWithArray:savedProjectArray];
@@ -129,14 +119,7 @@
 /* I'm not sure why i put these here. they can probably be erased as the 
 tempMemoryProjectArray and tempMemoryTaskArray are loaded at the start of this function
   */
-    if(_tempMemoryProjectArray==nil){
-        _tempMemoryProjectArray = [[NSArray alloc] initWithArray:tempMemoryProjectArray];
-    }
-    if(_tempMemoryTaskArray==nil){
-        _tempMemoryTaskArray = [[NSArray alloc] initWithArray:tempMemoryTaskArray];
-    }
-    //added for debugging
-    NSLog(@"%@",tempMemoryProjectArray);
+    NSLog(@"%@",self.tempMemoryProjectArray);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -176,7 +159,7 @@ tempMemoryProjectArray and tempMemoryTaskArray are loaded at the start of this f
         [_hourArray removeAllObjects];
         
         //redefine tempMemoryArray's as empty Arrays
-        NSArray *tempMemoryProjectArray = [[NSArray alloc] initWithArray:_projectArray];
+        self.tempMemoryProjectArray = [[NSArray alloc] initWithArray:_projectArray];
         NSArray *tempMemoryTaskArray = [[NSArray alloc] initWithArray:_taskArray];
         NSArray *tempMemoryFavoriteArray = [[NSArray alloc] initWithArray:_favoriteArray];
         NSArray *tempMemoryHourArray = [[NSArray alloc] initWithArray:_hourArray];
