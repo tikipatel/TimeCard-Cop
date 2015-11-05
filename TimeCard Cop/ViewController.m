@@ -110,10 +110,6 @@
         self.task13.text=savedTaskArray[12];
         self.hours13.text=savedHourArray[12];
     }
-    if (savedProjectArray.count > 13) {
-        self.project1.text=savedProjectArray[13];
-        self.task1.text=savedTaskArray[13];
-        self.hours1.text=savedHourArray[13];
     }
     
     NSLog(@"%lu",(unsigned long)savedProjectArray.count);
@@ -188,9 +184,7 @@
         self.project13.text=@"";
         self.task13.text=@"";
         self.hours13.text=@"";
-        self.project1.text=@"";
-        self.task1.text=@"";
-        self.hours1.text=@"";
+
 
     
     }];
