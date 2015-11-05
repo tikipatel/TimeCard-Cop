@@ -128,7 +128,7 @@ tempMemoryProjectArray and tempMemoryTaskArray are loaded at the start of this f
     
 }
 
--(NSInteger)numberOfComponetsInPickerView:(UIPickerView *)pickerView {
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     
     return 1;
     
